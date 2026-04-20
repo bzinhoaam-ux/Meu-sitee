@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo: HTML e CSS para Iniciantes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7fc;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navegação rápida */
+        .nav-top {
+            background: white;
+            border-radius: 50px;
+            padding: 0.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-top a {
+            text-decoration: none;
+            color: #2a5298;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .nav-top a:hover {
+            background: #2a5298;
+            color: white;
+        }
+
+        /* Cards de conteúdo */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+            border-left: 5px solid #e67e22;
+            padding-left: 1rem;
+        }
+
+        .card h3 {
+            color: #e67e22;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        /* Blocos de código */
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .code-block pre {
+            margin: 0;
+        }
+
+        /* Tabela comparativa */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        th {
+            background: #2a5298;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Grid para canais */
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .channel-card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .channel-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .channel-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+            color: #2a5298;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 HTML e CSS do Zero</h1>
+        <p>Guia completo para iniciantes — aprenda do absoluto zero até seus primeiros projetos</p>
+    </header>
+
+    <div class="container">
+        <!-- Navegação rápida -->
+        <div class="nav-top">
+            <a href="#o-que-e">O que é?</a>
+            <a href="#por-onde-comecar">Por onde começar?</a>
+            <a href="#html-basico">HTML Básico</a>
+            <a href="#css-basico">CSS Básico</a>
+            <a href="#projeto">Projeto Completo</a>
+            <a href="#codigos">Todos os Códigos</a>
+            <a href="#canais">Canais no YouTube</a>
+            <a href="#dicas">Dicas</a>
+        </div>
+
+        <!-- O que é HTML e CSS -->
+        <div class="card" id="o-que-e">
+            <span class="badge">📖 Conceitos Fundamentais</span>
+            <h2>O que é HTML?</h2>
+            <p><strong>HTML (HyperText Markup Language)</strong> é a linguagem de marcação usada para criar a <strong>estrutura</strong> de uma página web. É como o "esqueleto" de um site.</p>
+            
+            <h2>O que é CSS?</h2>
+            <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem de estilo usada para <strong>estilizar</strong> a página. É como a "roupa" e a "decoração" do site.</p>
+
+            <table>
+                <tr>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                </tr>
+                <tr>
+                    <td>Define a estrutura (títulos, parágrafos, imagens)</td>
+                    <td>Define a aparência (cores, fontes, tamanhos)</td>
+                </tr>
+                <tr>
+                    <td>É como os ossos do corpo</td>
+                    <td>É como a pele e as roupas</td>
+                </tr>
+                <tr>
+                    <td>Usa tags como &lt;h1&gt;, &lt;p&gt;, &lt;div&gt;</td>
+                    <td>Usa propriedades como color, font-size, margin</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Por onde começar -->
+        <div class="card" id="por-onde-comecar">
+            <span class="badge">🎯 Passo a Passo</span>
+            <h2>Por onde começar?</h2>
+            <h3>1. Instale um editor de código</h3>
+            <p>Recomendação: <strong>Visual Studio Code (VS Code)</strong> — gratuito, leve e muito usado. Baixe em code.visualstudio.com</p>
+            
+            <h3>2. Crie seu primeiro arquivo</h3>
+            <p>Crie uma pasta no seu computador. Dentro dela, crie um arquivo chamado <strong>index.html</strong>.</p>
+            
+            <h3>3. Estrutura básica de um HTML</h3>
+            <div class="code-block">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Meu primeiro site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é meu primeiro site.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+            <p>✅ Agora abra esse arquivo no navegador. Você já tem uma página web!</p>
+        </div>
+
+        <!-- HTML Básico -->
+        <div class="card" id="html-basico">
+            <span class="badge">🏷️ Tags Essenciais</span>
+            <h2>HTML Básico: Tags que você precisa saber</h2>
+            
+            <h3>Títulos</h3>
+            <div class="code-block">
+                <pre>&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Título menor&lt;/h3&gt;
+&lt;h4&gt;Título nível 4&lt;/h4&gt;
+&lt;h5&gt;Título nível 5&lt;/h5&gt;
+&lt;h6&gt;Título nível 6&lt;/h6&gt;</pre>
+            </div>
+            
+            <h3>Parágrafos e formatação</h3>
+            <div class="code-block">
+                <pre>&lt;p&gt;Isso é um parágrafo.&lt;/p&gt;
+&lt;strong&gt;Texto em negrito&lt;/strong&gt;
+&lt;em&gt;Texto em itálico&lt;/em&gt;
+&lt;br&gt; &lt;!-- Quebra de linha --&gt;
+&lt;hr&gt; &lt;!-- Linha horizontal --&gt;</pre>
+            </div>
+            
+            <h3>Listas</h3>
+            <div class="code-block">
+                <pre>&lt;!-- Lista não ordenada --&gt;
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Lista ordenada --&gt;
+&lt;ol&gt;
+    &lt;li&gt;Primeiro&lt;/li&gt;
+    &lt;li&gt;Segundo&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </div>
+            
+            <h3>Links e imagens</h3>
+            <div class="code-block">
+                <pre>&lt;!-- Link --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Clique aqui&lt;/a&gt;
+
+&lt;!-- Imagem --&gt;
+&lt;img src="imagem.jpg" alt="Descrição da imagem" width="300"&gt;</pre>
+            </div>
+            
+            <h3>Divisões e containers</h3>
+            <div class="code-block">
+                <pre>&lt;div&gt;
+    &lt;p&gt;Conteúdo dentro de uma divisão&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Seção do site&lt;/h2&gt;
+    &lt;p&gt;Conteúdo da seção&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;header&gt;Cabeçalho do site&lt;/header&gt;
+&lt;footer&gt;Rodapé do site&lt;/footer&gt;
+&lt;nav&gt;Menu de navegação&lt;/nav&gt;</pre>
+            </div>
+        </div>
+
+        <!-- CSS Básico -->
+        <div class="card" id="css-basico">
+            <span class="badge">🎨 Estilizando</span>
+            <h2>CSS Básico: Como estilizar</h2>
+            
+            <h3>3 formas de usar CSS</h3>
+            <ul>
+                <li><strong>Inline:</strong> dentro da própria tag (menos recomendado)</li>
+                <li><strong>Interno:</strong> dentro da tag &lt;style&gt; no cabeçalho (bom para testes)</li>
+                <li><strong>Externo:</strong> em um arquivo .css separado (recomendado para projetos)</li>
+            </ul>
+            
+            <h3>Exemplo de CSS Interno</h3>
+            <div class="code-block">
+                <pre>&lt;style&gt;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    h1 {
+        color: #2a5298;
+        text-align: center;
+    }
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+&lt;/style&gt;</pre>
+            </div>
+            
+            <h3>Exemplo de CSS Externo (arquivo style.css)</h3>
+            <div class="code-block">
+                <pre>/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.btn {
+    background: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btn:hover {
+    background: #d35400;
+}</pre>
+            </div>
+            
+            <h3>Propriedades CSS mais usadas</h3>
+            <table>
+                <tr><th>Propriedade</th><th>O que faz</th><th>Exemplo</th></tr>
+                <tr><td>color</td><td>Cor do texto</td><td>color: blue;</td></tr>
+                <tr><td>background-color</td><td>Cor de fundo</td><td>background-color: #eee;</td></tr>
+                <tr><td>font-size</td><td>Tamanho da fonte</td><td>font-size: 20px;</td></tr>
+                <tr><td>margin</td><td>Margem externa</td><td>margin: 10px;</td></tr>
+                <tr><td>padding</td><td>Espaçamento interno</td><td>padding: 15px;</td></tr>
+                <tr><td>border</td><td>Borda</td><td>border: 1px solid black;</td></tr>
+                <tr><td>display</td><td>Tipo de exibição</td><td>display: flex;</td></tr>
+                <tr><td>text-align</td><td>Alinhamento do texto</td><td>text-align: center;</td></tr>
+            </table>
+        </div>
+
+        <!-- Projeto completo passo a passo -->
+        <div class="card" id="projeto">
+            <span class="badge">🏗️ Projeto Prático</span>
+            <h2>Passo a passo: Criando um site completo</h2>
+            <h3>Passo 1: Estrutura HTML</h3>
+            <div class="code-block">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Meu Site Completo&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Meu Site&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#"&gt;Início&lt;/a&gt;
+            &lt;a href="#"&gt;Sobre&lt;/a&gt;
+            &lt;a href="#"&gt;Contato&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class="hero"&gt;
+            &lt;h2&gt;Bem-vindo!&lt;/h2&gt;
+            &lt;p&gt;Este é um site completo criado com HTML e CSS&lt;/p&gt;
+            &lt;a href="#" class="btn"&gt;Saiba mais&lt;/a&gt;
+        &lt;/section&gt;
+        &lt;section class="cards"&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;HTML&lt;/h3&gt;
+                &lt;p&gt;Linguagem de marcação para estrutura&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="card"&gt;
+                &lt;h3&gt;CSS&lt;/h3&gt;
+                &lt;p&gt;Linguagem de estilo para design&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2025 - Meu Site&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+            
+            <h3>Passo 2: CSS para estilizar (style.css)</h3>
+            <div class="code-block">
+                <pre>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fc;
+    color: #333;
+}
+header {
+    background: #2a5298;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.hero {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+.btn {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+.btn:hover {
+    background: #d35400;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+}
+footer {
+    background: #1e3c72;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}</pre>
+            </div>
+            <p>✅ Pronto! Você acaba de criar um site completo com HTML e CSS.</p>
+        </div>
+
+        <!-- Todos os códigos básicos -->
+        <div class="card" id="codigos">
+            <span class="badge">📋 Referência Rápida</span>
+            <h2>Todos os códigos básicos para criar um site</h2>
+            <h3>Estrutura base HTML</h3>
+            <div class="code-block">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Conteúdo visível da página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+            
+            <h3>Formulário básico</h3>
+            <div class="code-block">
+                <pre>&lt;form action="#" method="post"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" required&gt;
+    
+    &lt;label for="email"&gt;E-mail:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+    &lt;textarea id="mensagem" name="mensagem" rows="5"&gt;&lt;/textarea&gt;
+    
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</pre>
+            </div>
+            
+            <h3>Tabela básica</h3>
+            <div class="code-block">
+                <pre>&lt;table&gt;
+    &lt;thead&gt;
+        <tr><th>Nome</th><th>Idade</th></tr>
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        <tr><td>João</td><td>25</td></tr>
+        <tr><td>Maria</td><td>30</td></tr>
+    &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+            </div>
+        </div>
+
+        <!-- Canais do YouTube recomendados -->
+        <div class="card" id="canais">
+            <span class="badge">📺 Melhores Canais</span>
+            <h2>Canais do YouTube para aprender HTML e CSS</h2>
+            <div class="youtube-grid">
+                <div class="channel-card">
+                    <img class="channel-img" src="https://yt3.googleusercontent.com/ytc/AIdro_l9M7a6CzqB7QkPq5MCE0zDQE6nFh9HnVO1Jq6x=s88-c-k-c0x00ffffff-no-rj" alt="Curso em Vídeo">
+                    <div class="channel-name">Curso em Vídeo</div>
+                    <p>Gustavo Guanabara - Curso de HTML5 e CSS3 completo e gratuito</p>
+                </div>
+                <div class="channel-card">
+                    <img class="channel-img" src="https://yt3.googleusercontent.com/ytc/AIdro_k2yNl7L7qZBQjN3hZ4cYHp9xk9mQ1qZ6X8VQ=s88-c-k-c0x00ffffff-no-rj" alt="Rocketseat">
+                    <div class="channel-name">Rocketseat</div>
+                    <p>Conteúdo moderno sobre HTML, CSS e desenvolvimento web</p>
+                </div>
+                <div class="channel-card">
+                    <img class="channel-img" src="https://yt3.googleusercontent.com/ytc/AIdro_lGk1L8BkQmQ8Z5qY6k5pR5qX7p5pZ5p5pZ5p=s88-c-k-c0x00ffffff-no-rj" alt="Matheus Battisti">
+                    <div class="channel-name">Matheus Battisti</div>
+                    <p>Projetos práticos e tutoriais passo a passo</p>
+                </div>
+                <div class="channel-card">
+                    <img class="channel-img" src="https://yt3.googleusercontent.com/ytc/AIdro_l6VHlQJQy3jfY7dQ9pQqQpQpQpQpQpQpQp=s88-c-k-c0x00ffffff-no-rj" alt="CFB Cursos">
+                    <div class="channel-name">CFB Cursos</div>
+                    <p>Didática excelente para iniciantes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dicas para iniciantes -->
+        <div class="card" id="dicas">
+            <span class="badge">💡 Dicas de Ouro</span>
+            <h2>Dicas para evoluir rápido</h2>
+            <ul>
+                <li>✅ <strong>Pratique todos os dias</strong> — nem que seja 30 minutos</li>
+                <li>✅ <strong>Use o DevTools</strong> do navegador (aperte F12) para inspecionar sites reais</li>
+                <li>✅ <strong>Não copie código sem entender</strong> — digite linha por linha</li>
+                <li>✅ <strong>Faça projetos pequenos</strong>: cartão de visita, portfólio, currículo</li>
+                <li>✅ <strong>Consulte documentações</strong> (MDN Web Docs, W3Schools)</li>
+                <li>✅ <strong>Erre e corrija</strong> — é a melhor forma de aprender</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>🚀 Guia Completo de HTML e CSS para Iniciantes | Estude, pratique e crie!</p>
+        <p>Lembre-se: programação se aprende fazendo. Mãos no código!</p>
+    </footer>
+</body>
+</html>
